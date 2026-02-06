@@ -96,7 +96,6 @@ const createFloatingPage = () => {
     // Append to appointmentsArea
     appointmentsContainer.appendChild(newCard);
 
-    console.log(newCard);
     floatPage.remove();
   });
 
@@ -119,7 +118,3 @@ cardCancel.forEach((item) => {
     item.closest(".appointment-card").remove();
   });
 });
-// cardCancel.addEventListener("click", (event) => {
-//   event.preventDefault(); // Prevent page refreshing
-//   cardCancel.closest(".appointment-card").remove();
-// });
