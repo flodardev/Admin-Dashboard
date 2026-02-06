@@ -1,7 +1,8 @@
 body {
   display: grid;
-
-  grid: 1fr 4fr 1fr/ 1fr 4fr;
+  min-height: 100dvh;
+  width: 100%;
+  grid: auto 4fr auto/ 1fr 4fr;
   grid-template-areas:
     "sidebar header"
     "sidebar content"
@@ -10,16 +11,178 @@ body {
 
 .site-header {
   grid-area: header;
+  display: grid;
+  grid: 1fr 1fr / 2fr 1fr;
+
+  background-color: #f1e9e9;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+
+  color: #3e1e68;
+}
+
+.site-header svg {
+  fill: #3e1e68;
+}
+
+.header-search {
+  display: grid;
+  grid-template-columns: auto minmax(100px, 300px);
+  padding: 5px 25px;
+  justify-content: start;
+  align-items: center;
+}
+
+.header-search input {
+  height: 25px;
+  border-radius: 1em;
+}
+
+.header-search button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  background-color: #f1e9e9;
+}
+
+.header-profile {
+  display: grid;
+  grid-template-columns: 22px 30px 1fr;
+  gap: 20px;
+  justify-self: center;
+  align-items: center;
+}
+
+.header-profile a {
+  text-decoration: none;
+}
+
+.header-profile .user-name {
+  font-size: large;
+  font-weight: 800;
+}
+
+.header-greeting {
+  display: grid;
+  grid: min-content min-content / 50px auto;
+  padding: 5px 25px;
+  column-gap: 1rem;
+}
+.header-greeting > img {
+  height: 50px;
+  grid-row: 1 / 3;
+}
+.header-greeting > .greeting {
+  font-size: small;
+  font-weight: 800;
+}
+.header-greeting > .name {
+  font-size: large;
+  font-weight: 800;
+}
+
+.header-create-area {
+  display: grid;
+  height: 10px;
+  grid-template-columns: repeat(3, 100px);
+  justify-self: center;
+  align-self: center;
+  gap: 10px;
+}
+.header-create-area > button {
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  background-color: #3e1e68;
+  color: #faf9f6;
+  cursor: pointer;
+  border: none;
 }
 
 .sidebar {
+  background-color: #3e1e68;
+  color: #faf9f6;
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
   grid-area: sidebar;
+  display: grid;
+  grid-template-rows: min-content auto min-content;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #faf9f6;
+  text-transform: capitalize;
+
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  align-items: center;
+  gap: 10px;
+  padding-left: 1em;
+}
+
+.sidebar ul {
+  display: grid;
+  gap: 1em;
+  padding: 0;
+  margin-top: 2em;
+}
+
+.sidebar li {
+  list-style-type: none;
+}
+
+.sidebar svg {
+  justify-self: center;
+  fill: #faf9f6;
+}
+
+.sidebar-header {
+  display: grid;
+  grid-template-columns: minmax(25px, 50px) auto;
+  padding-top: 10px;
+}
+.sidebar-header > h3 {
+  text-transform: capitalize;
+  align-self: center;
+}
+
+.sidebar-settings {
+  padding-bottom: 1em;
 }
 
 .content-area {
   grid-area: content;
+  display: grid;
+  grid: 1fr 1fr / 4fr 1fr;
+  grid-template-areas:
+    "projects announcements"
+    "projects trendings";
+}
+
+.projects-area {
+  grid-area: projects;
+}
+
+.announcements-area {
+  grid-area: announcements;
+}
+
+.trendings-area {
+  grid-area: trendings;
 }
 
 .site-footer {
   grid-area: footer;
+  display: grid;
+  place-content: center;
+
+  font-size: smaller;
+  background-color: #3e1e68;
+  color: #faf9f6;
 }
