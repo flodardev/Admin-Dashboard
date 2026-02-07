@@ -159,10 +159,12 @@ body {
 .content-area {
   grid-area: content;
   display: grid;
-  grid: 1fr 1fr / 4fr 1fr;
-  grid-template-areas:
-    "appt announcements"
-    "appt trendings";
+  grid-template-columns: 4fr 1fr;
+  grid-template-areas: "appt info-bar";
+}
+
+.info-bar {
+  grid-area: info-bar;
 }
 
 .appointments-area {
@@ -175,24 +177,6 @@ body {
   display: grid;
   grid: 1fr 1fr 1fr / 1fr 1fr;
   gap: 1em;
-}
-
-.announcements-area {
-  grid-area: announcements;
-}
-
-.trendings-area {
-  grid-area: trendings;
-}
-
-.site-footer {
-  grid-area: footer;
-  display: grid;
-  place-content: center;
-
-  font-size: smaller;
-  background-color: #3e1e68;
-  color: #faf9f6;
 }
 
 /* Appointment Card */
@@ -224,6 +208,80 @@ body {
 .appt-time {
   font-size: xx-large;
   font-weight: 900;
+}
+
+/* Announcements area */
+.announcements-area {
+  grid-area: announcements;
+  padding: 1rem;
+}
+.ann-container {
+  margin-top: 1em;
+  padding: 0.5rem;
+  border-radius: 10px;
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  width: 100px;
+  display: grid;
+  width: 100%;
+  grid-template-rows: repeat(3, minmax(min-content, 1fr));
+}
+.announcement-card {
+  padding: 0.5rem;
+  border-bottom: 1px solid #3e1e68;
+}
+.announcement-card > p {
+  font-size: smaller;
+}
+.announcement-card.third {
+  border: none;
+}
+
+/* Trendings area */
+.trendings-area {
+  grid-area: trendings;
+  padding: 1rem;
+}
+.trendings-container {
+  margin-top: 1em;
+  padding: 0.5rem;
+  border-radius: 10px;
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  grid-area: announcements;
+  width: 100px;
+  display: grid;
+  width: 100%;
+  grid-template-rows: repeat(4, minmax(min-content, 1fr));
+  row-gap: 0.7rem;
+}
+.trending-card {
+  display: grid;
+  grid: auto auto / 30px 1fr;
+  column-gap: 0.5rem;
+}
+.trending-card > img {
+  grid-row: 1/3;
+  height: 30px;
+  place-self: center;
+}
+.trending-card > p {
+  font-size: small;
+}
+
+/* Footer area */
+.site-footer {
+  grid-area: footer;
+  display: grid;
+  place-content: center;
+
+  font-size: smaller;
+  background-color: #3e1e68;
+  color: #faf9f6;
 }
 
 /* Floating page */
