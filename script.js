@@ -4,8 +4,8 @@ const createFloatingPage = () => {
 
   floatPage.innerHTML = `
     <div class="floating-content">
-      <h2>Floating Page</h2>
-      <p>This sits on top of your grid!</p>
+      <h2>Create a new appointment card</h2>
+      <p>Please fill in the following</p>
       <form id="appointment-form" class="site-form">
         <!-- Group inputs for better styling -->
         <div class="form-group">
